@@ -3,11 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your real Measurement ID from analytics.google.com once you create a GA4 property -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <title>KGY Logistics LLC | Owner-Operated Cargo Van Delivery — Schenectady, NY</title>
-<meta name="description" content="Owner-operated cargo van delivery out of Schenectady, NY. Expedited, final-mile, and dedicated-route freight, nationwide. Call or text (518) 330-9823.">
+<meta name="description" content="Owner-operated cargo van delivery based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor (NY/NJ/MA/CT), with nationwide reach for time-critical freight. Call or text (518) 330-9823.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="KGY Logistics LLC | Owner-Operated Cargo Van Delivery">
-<meta property="og:description" content="Owner-operated cargo van delivery out of Schenectady, NY — expedited, final-mile, and dedicated-route freight, nationwide.">
+<meta property="og:description" content="Owner-operated cargo van delivery based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical freight.">
 <meta property="og:url" content="https://www.kgylogistics.com">
 <meta name="theme-color" content="#111315">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23111315'/%3E%3Ctext x='50' y='70' font-family='Arial, sans-serif' font-size='56' font-weight='900' fill='%237ee62b' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
@@ -18,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "KGY Logistics LLC",
-  "description": "Owner-operated cargo van delivery — expedited, final-mile, and dedicated-route freight, nationwide.",
+  "description": "Owner-operated cargo van delivery based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical freight.",
   "telephone": "+1-518-330-9823",
   "email": "khalil@kgylogistics.com",
   "url": "https://www.kgylogistics.com",
@@ -33,7 +41,7 @@
     "postalCode": "12308",
     "addressCountry": "US"
   },
-  "areaServed": "US"
+  "areaServed": ["New York", "New Jersey", "Massachusetts", "Connecticut", "United States"]
 }
 </script>
 <style>
@@ -102,7 +110,7 @@
   .spec-cell .value{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;line-height:1.3;}
   .van-gallery{margin:0 40px 32px;}
   .van-gallery-main{border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;margin-bottom:10px;background:#000;}
-  .van-gallery-main img{width:100%;height:auto;max-height:460px;object-fit:cover;display:block;}
+  .van-gallery-main img{width:100%;height:auto;max-height:460px;aspect-ratio:4/3;object-fit:cover;display:block;}
   .van-gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .van-gallery-thumb{border:1px solid var(--gray-200);border-radius:8px;overflow:hidden;cursor:pointer;background:#000;padding:0;margin:0;display:block;width:100%;font:inherit;}
   .van-gallery-thumb img{width:100%;height:150px;object-fit:cover;display:block;transition:opacity .15s;}
@@ -135,6 +143,15 @@
   .contact-line{margin-top:22px;padding-top:20px;border-top:1px solid var(--gray-200);}
   .contact-line a, .contact-line span{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--charcoal);margin-right:26px;margin-bottom:8px;}
   .contact-line a:hover{color:var(--blue);}
+  .quote-form{margin-top:8px;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;}
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-field-full{margin-bottom:24px;}
+  .form-field label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-600);}
+  .form-field input,.form-field textarea{font-family:'Inter',sans-serif;font-size:14.5px;padding:12px 14px;border:1px solid var(--gray-200);border-radius:6px;background:var(--gray-100);color:var(--black);width:100%;}
+  .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--blue);background:#fff;}
+  .form-field textarea{resize:vertical;}
+  .form-note{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gray-400);margin-top:14px;}
   footer{background:var(--black);color:#fff;padding:56px 0 28px;}
   .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px;}
   footer .logo-main{color:#fff;}
@@ -143,6 +160,7 @@
   .footer-col a, .footer-col div{display:block;color:rgba(255,255,255,.8);font-size:14.5px;margin-bottom:12px;}
   .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(255,255,255,.4);letter-spacing:.5px;}
   @media (max-width:900px){nav .nav-links{display:none;}.service-grid{grid-template-columns:1fr 1fr;}.about-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.spec-grid{grid-template-columns:1fr 1fr;}.spec-cell:nth-child(4n){border-right:1px solid var(--gray-200);}.spec-cell:nth-child(2n){border-right:none;}.capacity-grid{grid-template-columns:1fr;margin:0 20px 28px;}.diagram-panel{grid-template-columns:1fr;margin:0 20px 28px;}.capacity-intro{padding:0 20px;}.spec-disclaimer{margin:0 20px 28px;}}
+  @media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -150,18 +168,18 @@
   <div class="header-inner">
     <div class="logo-block brand-lockup"><span class="logo-main">KGY</span><span class="logo-main">LOGISTICS LLC</span></div>
     <nav>
-      <div class="nav-links"><a href="#fleet">The Fleet</a><a href="#services">Services</a><a href="#about">About</a></div>
+      <div class="nav-links"><a href="#fleet">The Fleet</a><a href="#quote">Get A Rate</a><a href="#services">Services</a><a href="#about">About</a></div>
       <a href="tel:+15183309823" class="btn btn-lime"><span class="cta-full">Call/Text (518) 330-9823 →</span><span class="cta-short">Call/Text →</span></a>
     </nav>
   </div>
 </header>
 <section class="hero grid-bg">
   <div class="wrap">
-    <div class="eyebrow"><span class="dot"></span>Fast · Reliable · Nationwide Cargo Van Delivery</div>
+    <div class="eyebrow"><span class="dot"></span>Fast · Reliable · Northeast &amp; Nationwide Cargo Van Delivery</div>
     <h1>SPECIALIZED<br><span class="accent">CARGO VAN</span><br>DELIVERY</h1>
-    <p class="hero-lede">Owner-operated cargo van delivery out of Schenectady, NY — engineered for the last mile. Rapid dispatch, live tracking, and surgical precision, from first light to the final mile.</p>
+    <p class="hero-lede">Owner-operated cargo van delivery based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor (NY/NJ/MA/CT), with nationwide reach for time-critical freight. Rapid dispatch, live tracking, and surgical precision, from first light to the final mile.</p>
     <div class="tag-list"><span><span class="pip"></span>Expedited</span><span><span class="pip"></span>Final Mile</span><span><span class="pip"></span>Dedicated Routes</span><span><span class="pip"></span>Time-Critical Freight</span></div>
-    <div class="hero-ctas"><a href="tel:+15183309823" class="btn btn-lime btn-lg">Call/Text (518) 330-9823 →</a><a href="#fleet" class="link-underline">View The Fleet</a></div>
+    <div class="hero-ctas"><a href="tel:+15183309823" class="btn btn-lime btn-lg">Call/Text (518) 330-9823 →</a><a href="#quote" class="link-underline">Get A Rate</a><a href="#fleet" class="link-underline">View The Fleet</a></div>
     <div class="owner-badge"><span class="check">✓</span>Owner-Operated · Khalil Yusuf</div>
   </div>
 </section>
@@ -174,11 +192,11 @@
     <div class="fleet-card">
       <div class="fleet-head"><h3>Unit KGY-01</h3><p>The backbone of the KGY fleet — a 2026 Ram ProMaster 3500, Super High Roof, 159&quot; Extended wheelbase. Factory-spec'd for urban expedited and final-mile freight, with a low, flat, front-wheel-drive load floor and a best-in-class 36-ft turning diameter.</p></div>
       <div class="van-gallery">
-        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg" alt="KGY Logistics Unit KGY-01 — 2026 Ram ProMaster 3500, front three-quarter view, silver"></div>
+        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg" alt="KGY Logistics Unit KGY-01 — 2026 Ram ProMaster 3500, front three-quarter view, silver" fetchpriority="high"></div>
         <div class="van-gallery-thumbs">
-          <button type="button" class="van-gallery-thumb" onclick="document.getElementById('vanMainImg').src=this.querySelector('img').src"><img src="photos/side.jpg" alt="Side profile"></button>
-          <button type="button" class="van-gallery-thumb" onclick="document.getElementById('vanMainImg').src=this.querySelector('img').src"><img src="photos/rear.jpg" alt="Rear three-quarter view"></button>
-          <button type="button" class="van-gallery-thumb" onclick="document.getElementById('vanMainImg').src=this.querySelector('img').src"><img src="photos/interior.jpg" alt="Cargo interior, empty"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/side.jpg" alt="Side profile" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/rear.jpg" alt="Rear three-quarter view" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/interior.jpg" alt="Cargo interior, empty" loading="lazy" decoding="async"></button>
         </div>
         <div class="van-gallery-caption"><span>Unit KGY-01 — 2026 Ram ProMaster 3500, Silver</span><span>Click a thumbnail to view</span></div>
       </div>
@@ -226,6 +244,28 @@
     </div>
   </div>
 </section>
+<section class="section" id="quote">
+  <div class="wrap">
+    <div class="section-eyebrow"><span class="dot"></span>Request A Rate</div>
+    <h2 class="section-title">Get a quote in one message.</h2>
+    <p class="section-sub">Fill in your lane and load details below. Submitting opens a pre-filled email straight to Khalil — no account, login, or third-party form service involved.</p>
+    <form class="quote-form" id="quoteForm">
+      <div class="form-grid">
+        <div class="form-field"><label for="q-name">Name</label><input type="text" id="q-name" required></div>
+        <div class="form-field"><label for="q-company">Company / Brokerage</label><input type="text" id="q-company"></div>
+        <div class="form-field"><label for="q-email">Email</label><input type="email" id="q-email" required></div>
+        <div class="form-field"><label for="q-phone">Phone</label><input type="tel" id="q-phone"></div>
+        <div class="form-field"><label for="q-origin">Pickup Location</label><input type="text" id="q-origin" required></div>
+        <div class="form-field"><label for="q-dest">Delivery Location</label><input type="text" id="q-dest" required></div>
+        <div class="form-field"><label for="q-date">Ready Date</label><input type="date" id="q-date"></div>
+        <div class="form-field"><label for="q-load">Load Type / Weight</label><input type="text" id="q-load" placeholder="e.g. 2 pallets, 800 lbs"></div>
+      </div>
+      <div class="form-field form-field-full"><label for="q-notes">Notes</label><textarea id="q-notes" rows="4" placeholder="Anything else Khalil should know"></textarea></div>
+      <button type="submit" class="btn btn-lime btn-lg">Send Rate Request →</button>
+      <p class="form-note">Submitting opens your email app with everything pre-filled — just hit send.</p>
+    </form>
+  </div>
+</section>
 <section class="section" id="services">
   <div class="wrap">
     <div class="section-eyebrow"><span class="dot"></span>What We Move</div>
@@ -244,9 +284,9 @@
     <div class="section-eyebrow"><span class="dot"></span>About KGY Logistics</div>
     <h2 class="section-title" style="margin-bottom:48px;">Owner-operated. Directly accountable.</h2>
     <div class="about-grid">
-      <div class="about-photo"><img src="photos/headshot.jpg" alt="Khalil Yusuf, Owner-Operator, KGY Logistics LLC" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"><span class="tagline">Schenectady, NY · Est. 2026</span></div>
+      <div class="about-photo"><img src="photos/headshot.jpg" alt="Khalil Yusuf, Owner-Operator, KGY Logistics LLC" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy" decoding="async"><span class="tagline">Schenectady, NY · Est. 2026</span></div>
       <div class="about-copy">
-        <p>KGY Logistics LLC is an owner-operated cargo van delivery company based in Schenectady, NY — expedited, final-mile, and dedicated-route freight, nationwide. When you book KGY, you book the owner behind the wheel. No broker layers, no subcontracted capacity — just direct accountability from pickup to final mile.</p>
+        <p>KGY Logistics LLC is an owner-operated cargo van delivery company based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical and dedicated-route freight. When you book KGY, you book the owner behind the wheel. No broker layers, no subcontracted capacity — just direct accountability from pickup to final mile.</p>
         <div class="name">Khalil Yusuf</div>
         <div class="role">Owner-Operator</div>
         <div class="contact-line">
@@ -262,12 +302,31 @@
 <footer id="contact">
   <div class="wrap">
     <div class="footer-grid">
-      <div><div class="logo-block brand-lockup"><span class="logo-main">KGY</span><span class="logo-main">LOGISTICS LLC</span></div><p>Owner-operated cargo van delivery out of Schenectady, NY — expedited, final-mile, and dedicated-route freight, nationwide.</p></div>
-      <div class="footer-col"><h5>Site</h5><a href="#fleet">The Fleet</a><a href="#services">Services</a><a href="#about">About</a></div>
+      <div><div class="logo-block brand-lockup"><span class="logo-main">KGY</span><span class="logo-main">LOGISTICS LLC</span></div><p>Owner-operated cargo van delivery based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical freight.</p></div>
+      <div class="footer-col"><h5>Site</h5><a href="#fleet">The Fleet</a><a href="#quote">Get A Rate</a><a href="#services">Services</a><a href="#about">About</a></div>
       <div class="footer-col"><h5>Contact Khalil</h5><a href="tel:+15183309823">(518) 330-9823</a><a href="mailto:khalil@kgylogistics.com">khalil@kgylogistics.com</a><div>Schenectady, NY 12308</div></div>
     </div>
     <div class="footer-bottom"><span>© 2026 KGY LOGISTICS LLC. ALL RIGHTS RESERVED.</span><span>SCHENECTADY, NY 12308 · LICENSED &amp; INSURED</span></div>
   </div>
 </footer>
+<script>
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('q-name').value;
+  var company = document.getElementById('q-company').value;
+  var email = document.getElementById('q-email').value;
+  var phone = document.getElementById('q-phone').value;
+  var origin = document.getElementById('q-origin').value;
+  var dest = document.getElementById('q-dest').value;
+  var date = document.getElementById('q-date').value;
+  var load = document.getElementById('q-load').value;
+  var notes = document.getElementById('q-notes').value;
+  var subject = 'Rate Request: ' + origin + ' to ' + dest;
+  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\nPhone: ' + phone +
+    '\nPickup: ' + origin + '\nDelivery: ' + dest + '\nReady Date: ' + date +
+    '\nLoad: ' + load + '\n\nNotes:\n' + notes;
+  window.location.href = 'mailto:khalil@kgylogistics.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
