@@ -161,6 +161,18 @@
   .footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(255,255,255,.4);letter-spacing:.5px;}
   @media (max-width:900px){nav .nav-links{display:none;}.service-grid{grid-template-columns:1fr 1fr;}.about-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.spec-grid{grid-template-columns:1fr 1fr;}.spec-cell:nth-child(4n){border-right:1px solid var(--gray-200);}.spec-cell:nth-child(2n){border-right:none;}.capacity-grid{grid-template-columns:1fr;margin:0 20px 28px;}.diagram-panel{grid-template-columns:1fr;margin:0 20px 28px;}.capacity-intro{padding:0 20px;}.spec-disclaimer{margin:0 20px 28px;}}
   @media (max-width:600px){.form-grid{grid-template-columns:1fr;}}
+  /* Mobile: replace hairline-divider grids with spaced cards so no stray horizontal lines appear */
+  @media (max-width:900px){
+    .grid-bg::before{display:none;}
+    .capacity-grid,.service-grid{background:transparent;border:none;border-radius:0;overflow:visible;gap:14px;}
+    .capacity-card,.service-card{border:1px solid var(--gray-200);border-radius:10px;}
+    .spec-grid{background:transparent;border:none;border-radius:0;overflow:visible;gap:14px;}
+    .spec-cell{border:1px solid var(--gray-200)!important;border-radius:10px;}
+  }
+  @media (max-width:600px){
+    .service-grid{grid-template-columns:1fr;}
+    .spec-grid{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -192,11 +204,11 @@
     <div class="fleet-card">
       <div class="fleet-head"><h3>Unit KGY-01</h3><p>The backbone of the KGY fleet — a 2026 Ram ProMaster 3500, Super High Roof, 159&quot; Extended wheelbase. Factory-spec'd for urban expedited and final-mile freight, with a low, flat, front-wheel-drive load floor and a best-in-class 36-ft turning diameter.</p></div>
       <div class="van-gallery">
-        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg?v=3" alt="KGY Logistics Unit KGY-01 — 2026 Ram ProMaster 3500, front three-quarter view, silver" fetchpriority="high"></div>
+        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg?v=4" alt="KGY Logistics Unit KGY-01 — 2026 Ram ProMaster 3500, front three-quarter view, silver" fetchpriority="high"></div>
         <div class="van-gallery-thumbs">
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/side.jpg?v=3" alt="Side profile" loading="lazy" decoding="async"></button>
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/rear.jpg?v=3" alt="Rear three-quarter view" loading="lazy" decoding="async"></button>
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/interior.jpg?v=3" alt="Cargo interior, empty" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/side.jpg?v=4" alt="Side profile" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/rear.jpg?v=4" alt="Rear three-quarter view" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/interior.jpg?v=4" alt="Cargo interior, empty" loading="lazy" decoding="async"></button>
         </div>
         <div class="van-gallery-caption"><span>Unit KGY-01 — 2026 Ram ProMaster 3500, Silver</span><span>Click a thumbnail to view</span></div>
       </div>
@@ -284,7 +296,7 @@
     <div class="section-eyebrow"><span class="dot"></span>About KGY Logistics</div>
     <h2 class="section-title" style="margin-bottom:48px;">Owner-operated. Directly accountable.</h2>
     <div class="about-grid">
-      <div class="about-photo"><img src="photos/headshot.jpg?v=3" alt="Khalil Yusuf, Owner-Operator, KGY Logistics LLC" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy" decoding="async"><span class="tagline">Schenectady, NY · Est. 2026</span></div>
+      <div class="about-photo"><img src="photos/headshot.jpg?v=4" alt="Khalil Yusuf, Owner-Operator, KGY Logistics LLC" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy" decoding="async"><span class="tagline">Schenectady, NY · Est. 2026</span></div>
       <div class="about-copy">
         <p>KGY Logistics LLC is an owner-operated cargo van delivery company based in Schenectady, NY — core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical and dedicated-route freight. When you book KGY, you book the owner behind the wheel. No broker layers, no subcontracted capacity — just direct accountability from pickup to final mile.</p>
         <div class="name">Khalil Yusuf</div>
