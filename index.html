@@ -109,10 +109,10 @@
   .spec-cell .value{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;line-height:1.3;}
   .van-gallery{margin:0 40px 32px;}
   .van-gallery-main{border:1px solid var(--gray-200);border-radius:10px;overflow:hidden;margin-bottom:10px;background:#000;}
-  .van-gallery-main img{width:100%;height:auto;max-height:460px;aspect-ratio:4/3;object-fit:cover;display:block;}
+  .van-gallery-main img{width:100%;height:320px;object-fit:contain;display:block;}
   .van-gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
   .van-gallery-thumb{border:1px solid var(--gray-200);border-radius:8px;overflow:hidden;cursor:pointer;background:#000;padding:0;margin:0;display:block;width:100%;font:inherit;}
-  .van-gallery-thumb img{width:100%;height:150px;object-fit:cover;display:block;transition:opacity .15s;}
+  .van-gallery-thumb img{width:100%;height:100px;object-fit:contain;display:block;transition:opacity .15s;}
   .van-gallery-thumb:hover img{opacity:.85;}
   .van-gallery-thumb:focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
   .van-gallery-caption{padding:10px 2px 0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-400);display:flex;justify-content:space-between;}
@@ -201,11 +201,11 @@
     <div class="fleet-card">
       <div class="fleet-head"><h3>Unit KGY-01</h3><p>The backbone of the KGY fleet &mdash; a 2026 Ram ProMaster 3500, High Roof, 159&quot; Extended wheelbase. Factory-spec'd for urban expedited and final-mile freight, with a low, flat, front-wheel-drive load floor and a best-in-class 36-ft turning diameter.</p></div>
       <div class="van-gallery">
-        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg?v=4" alt="KGY Logistics Unit KGY-01 &mdash; 2026 Ram ProMaster 3500, front three-quarter view, silver" fetchpriority="high"></div>
+        <div class="van-gallery-main"><img id="vanMainImg" src="photos/front.jpg?v=5" alt="KGY Logistics Unit KGY-01 &mdash; 2026 Ram ProMaster 3500, front three-quarter view, silver" fetchpriority="high"></div>
         <div class="van-gallery-thumbs">
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/side.jpg?v=4" alt="Side profile" loading="lazy" decoding="async"></button>
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/rear.jpg?v=4" alt="Rear three-quarter view" loading="lazy" decoding="async"></button>
-          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/interior.jpg?v=4" alt="Cargo interior, empty" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/side.jpg?v=5" alt="Side profile" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/rear.jpg?v=5" alt="Rear three-quarter view" loading="lazy" decoding="async"></button>
+          <button type="button" class="van-gallery-thumb" onclick="var m=document.getElementById('vanMainImg');var t=this.querySelector('img');m.src=t.src;m.alt=t.alt;"><img src="photos/interior.jpg?v=5" alt="Cargo interior, empty" loading="lazy" decoding="async"></button>
         </div>
         <div class="van-gallery-caption"><span>Unit KGY-01 &mdash; 2026 Ram ProMaster 3500, Silver</span><span>Click a thumbnail to view</span></div>
       </div>
