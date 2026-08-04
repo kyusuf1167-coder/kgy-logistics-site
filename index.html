@@ -257,21 +257,23 @@
   <div class="wrap">
     <div class="section-eyebrow"><span class="dot"></span>Request A Rate</div>
     <h2 class="section-title">Get a quote in one message.</h2>
-    <p class="section-sub">Fill in your lane and load details below. Submitting opens a pre-filled email straight to Khalil &mdash; no account, login, or third-party form service involved.</p>
-    <form class="quote-form" id="quoteForm">
+    <p class="section-sub">Fill in your lane and load details below and hit send &mdash; it goes straight to Khalil, with an instant confirmation on screen.</p>
+    <form class="quote-form" name="quote-request" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="quoteForm">
+      <input type="hidden" name="form-name" value="quote-request">
+      <p style="position:absolute;left:-9999px;" aria-hidden="true"><label>Leave this field blank: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <div class="form-grid">
-        <div class="form-field"><label for="q-name">Name</label><input type="text" id="q-name" required></div>
-        <div class="form-field"><label for="q-company">Company / Brokerage</label><input type="text" id="q-company"></div>
-        <div class="form-field"><label for="q-email">Email</label><input type="email" id="q-email" required></div>
-        <div class="form-field"><label for="q-phone">Phone</label><input type="tel" id="q-phone"></div>
-        <div class="form-field"><label for="q-origin">Pickup Location</label><input type="text" id="q-origin" required></div>
-        <div class="form-field"><label for="q-dest">Delivery Location</label><input type="text" id="q-dest" required></div>
-        <div class="form-field"><label for="q-date">Ready Date</label><input type="date" id="q-date"></div>
-        <div class="form-field"><label for="q-load">Load Type / Weight</label><input type="text" id="q-load" placeholder="e.g. 2 pallets, 800 lbs"></div>
+        <div class="form-field"><label for="q-name">Name</label><input type="text" id="q-name" name="name" required></div>
+        <div class="form-field"><label for="q-company">Company / Brokerage</label><input type="text" id="q-company" name="company"></div>
+        <div class="form-field"><label for="q-email">Email</label><input type="email" id="q-email" name="email" required></div>
+        <div class="form-field"><label for="q-phone">Phone</label><input type="tel" id="q-phone" name="phone"></div>
+        <div class="form-field"><label for="q-origin">Pickup Location</label><input type="text" id="q-origin" name="pickup" required></div>
+        <div class="form-field"><label for="q-dest">Delivery Location</label><input type="text" id="q-dest" name="delivery" required></div>
+        <div class="form-field"><label for="q-date">Ready Date</label><input type="date" id="q-date" name="ready-date"></div>
+        <div class="form-field"><label for="q-load">Load Type / Weight</label><input type="text" id="q-load" name="load" placeholder="e.g. 2 pallets, 800 lbs"></div>
       </div>
-      <div class="form-field form-field-full"><label for="q-notes">Notes</label><textarea id="q-notes" rows="4" placeholder="Anything else Khalil should know"></textarea></div>
-      <button type="submit" class="btn btn-lime btn-lg">Send Rate Request &rarr;</button>
-      <p class="form-note">Submitting opens your email app with everything pre-filled &mdash; just hit send.</p>
+      <div class="form-field form-field-full"><label for="q-notes">Notes</label><textarea id="q-notes" name="notes" rows="4" placeholder="Anything else Khalil should know"></textarea></div>
+      <button type="submit" class="btn btn-lime btn-lg" id="quoteSubmitBtn">Send Rate Request &rarr;</button>
+      <p class="form-note" id="quoteFormNote">Submitting sends your request straight to Khalil &mdash; you'll get an on-screen confirmation the instant it's received.</p>
     </form>
   </div>
 </section>
@@ -321,19 +323,29 @@
 <script>
   document.getElementById('quoteForm').addEventListener('submit', function(e){
     e.preventDefault();
-    const f = e.target;
-    const get = id => document.getElementById(id).value || '(not provided)';
-    const subject = `Rate Request - ${get('q-origin')} to ${get('q-dest')}`;
-    const body = `Name: ${get('q-name')}
-Company: ${get('q-company')}
-Email: ${get('q-email')}
-Phone: ${get('q-phone')}
-Pickup: ${get('q-origin')}
-Delivery: ${get('q-dest')}
-Ready Date: ${get('q-date')}
-Load: ${get('q-load')}
-Notes: ${get('q-notes')}`;
-    window.location.href = `mailto:khalil@kgylogistics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const form = e.target;
+    const btn = document.getElementById('quoteSubmitBtn');
+    const note = document.getElementById('quoteFormNote');
+    const data = new FormData(form);
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(data).toString()
+    }).then(function(res){
+      if(!res.ok) throw new Error('bad status');
+      form.style.display = 'none';
+      note.textContent = 'Request received — Khalil will follow up shortly.';
+      note.style.color = 'var(--lime-dark)';
+      note.style.fontWeight = '700';
+      note.style.fontSize = '14px';
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Send Rate Request →';
+      note.textContent = 'Something went wrong — please call/text (518) 330-9823 directly.';
+      note.style.color = '#c0392b';
+    });
   });
 </script>
 </body>
