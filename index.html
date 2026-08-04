@@ -296,4 +296,49 @@
     <div class="section-eyebrow"><span class="dot"></span>About KGY Logistics</div>
     <h2 class="section-title" style="margin-bottom:48px;">Owner-operated. Directly accountable.</h2>
     <div class="about-grid">
-      <div class="about-photo"><img src="photos/headshot.
+      <div class="about-photo"><img src="photos/headshot.jpg?v=4" alt="Khalil Yusuf, Owner-Operator, KGY Logistics LLC" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" loading="lazy" decoding="async"><span class="tagline">Schenectady, NY Â· Est. 2026</span></div>
+      <div class="about-copy">
+        <p>KGY Logistics LLC is an owner-operated cargo van delivery company based in Schenectady, NY â€” core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical and dedicated-route freight. When you book KGY, you book the owner behind the wheel. No broker layers, no subcontracted capacity â€” just direct accountability from pickup to final mile.</p>
+        <div class="name">Khalil Yusuf</div>
+        <div class="role">Owner-Operator</div>
+        <div class="contact-line">
+          <a href="tel:+15183309823">(518) 330-9823</a>
+          <a href="mailto:khalil@kgylogistics.com">khalil@kgylogistics.com</a>
+          <a href="https://www.kgylogistics.com">www.kgylogistics.com</a>
+          <span>Schenectady, NY 12308</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div><div class="logo-block brand-lockup"><span class="logo-main">KGY</span><span class="logo-main">LOGISTICS LLC</span></div><p>Owner-operated cargo van delivery based in Schenectady, NY â€” core coverage across the Capital Region and Northeast corridor, with nationwide reach for time-critical freight.</p></div>
+      <div class="footer-col"><h5>Site</h5><a href="#fleet">The Fleet</a><a href="#quote">Get A Rate</a><a href="#services">Services</a><a href="#about">About</a></div>
+      <div class="footer-col"><h5>Contact Khalil</h5><a href="tel:+15183309823">(518) 330-9823</a><a href="mailto:khalil@kgylogistics.com">khalil@kgylogistics.com</a><div>Schenectady, NY 12308</div></div>
+    </div>
+    <div class="footer-bottom"><span>Â© 2026 KGY LOGISTICS LLC. ALL RIGHTS RESERVED.</span><span>SCHENECTADY, NY 12308 Â· LICENSED &amp; INSURED</span></div>
+  </div>
+</footer>
+<script>
+document.getElementById('quoteForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('q-name').value;
+  var company = document.getElementById('q-company').value;
+  var email = document.getElementById('q-email').value;
+  var phone = document.getElementById('q-phone').value;
+  var origin = document.getElementById('q-origin').value;
+  var dest = document.getElementById('q-dest').value;
+  var date = document.getElementById('q-date').value;
+  var load = document.getElementById('q-load').value;
+  var notes = document.getElementById('q-notes').value;
+  var subject = 'Rate Request: ' + origin + ' to ' + dest;
+  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\nPhone: ' + phone +
+    '\nPickup: ' + origin + '\nDelivery: ' + dest + '\nReady Date: ' + date +
+    '\nLoad: ' + load + '\n\nNotes:\n' + notes;
+  window.location.href = 'mailto:khalil@kgylogistics.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
