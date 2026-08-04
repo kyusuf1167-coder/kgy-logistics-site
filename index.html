@@ -329,12 +329,12 @@
     const data = new FormData(form);
     btn.disabled = true;
     btn.textContent = 'Sending...';
-    fetch('/', {
+    fetch('https://kgy-logistics.netlify.app/', {
       method: 'POST',
+      mode: 'no-cors',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: new URLSearchParams(data).toString()
-    }).then(function(res){
-      if(!res.ok) throw new Error('bad status');
+    }).then(function(){
       form.style.display = 'none';
       note.textContent = 'Request received — Khalil will follow up shortly.';
       note.style.color = 'var(--lime-dark)';
